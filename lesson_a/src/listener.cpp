@@ -10,11 +10,13 @@ void chatterCallback(const std_msgs::String::ConstPtr& msg)
 int main(int argc , char **argv)
 {
 
-    ros::init(argc, argv, "listener");
+    ros::init(argc, argv, "node_name_of_subscriber");
 
     ros::NodeHandle n;
+    
+    // topic_name : Topic the node is subscribing to
 
-    ros::Subscriber sub = n.subscribe("chatter", 1000, chatterCallback);
+    ros::Subscriber sub = n.subscribe("topic_name", 1000, chatterCallback);
 
     ros::spin();
 
